@@ -13,3 +13,27 @@
     text-decoration: none;
     color: white;
 }
+
+.mobile-menu{
+    list-style: none;
+}
+
+.mobile-menu li {
+    margin-top: 20px;
+}
+
+.mobile-menu li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.4rem;
+}
+
+.social-logos{
+    margin-right: 10px;
+}
+
+.social-logos:hover{
+    color: goldenrod;
+    transform: translateX(5px);
+    transition: all 400ms;
+}
