@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { AppBar, Box, Divider, Drawer, IconButton, Toolbar, Typography } from '@mui/material'
-import { Link } from 'react-router-dom';
-import '../../styles/HeaderStyle.css'
-import { Brandy, List } from 'phosphor-react';
+import { Link, NavLink } from 'react-router-dom';
+import Logo from '../../assets/logo.svg';
+import '../../styles/HeaderStyle.css';
+import { List } from 'phosphor-react';
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -13,7 +14,12 @@ const Header = () => {
 
   const drawer = (
     <Box onClick={handleDrawer} sx={{textAlign:'center'}}>
-            <Typography variant='h6' color='goldenrod' component='nav' sx={{flexGrow: 1, my:2}}>Resturant</Typography>  
+            <Typography variant='h6' color='goldenrod' component='nav' sx={{flexGrow: 1, my:2}}>
+            <Link to='/'>
+                 <img src={Logo} alt="logo" width='200px' height='60px'/>  
+              
+              </Link>
+              </Typography>  
 
             <Box sx={{display:{xs:'block', sm:'none'}}}>
 
@@ -21,16 +27,16 @@ const Header = () => {
               
               <ul className='mobile-menu'>
                 <li>
-                  <Link to={'/'}>Home</Link>
+                  <NavLink activeClassName='active' to={'/'}>Home</NavLink>
                 </li>
                 <li>
-                  <Link to={'/menu'}>Menu</Link>
+                  <NavLink to={'/menu'}>Menu</NavLink>
                 </li>
                 <li>
-                  <Link to={'/about'}>About</Link>
+                  <NavLink to={'/about'}>About</NavLink>
                 </li>
                 <li>
-                  <Link to={'/contact'}>Contact</Link>
+                  <NavLink to={'/contact'}>Contact</NavLink>
                 </li>
               </ul>
             </Box>
@@ -45,22 +51,26 @@ const Header = () => {
               onClick={handleDrawer}>
               <List color='white'/>
             </IconButton>
-            <Brandy  />
-            <Typography variant='h6' color='goldenrod' component='nav' sx={{flexGrow: 1}}>Resturant</Typography>  
+            <Typography variant='h6' color='goldenrod' component='nav' sx={{flexGrow: 1}}>
+              <Link to='/'>
+                 <img src={Logo} alt="logo" width='200px' height='60px'/>  
+              
+              </Link>
+            </Typography>  
 
             <Box sx={{display:{xs:'none', sm:'block'}}}>
               <ul className='navigation-menu'>
                 <li>
-                  <Link to={'/'}>Home</Link>
+                  <NavLink activeClassName='active' to={'/'}>Home</NavLink>
                 </li>
                 <li>
-                  <Link to={'/menu'}>Menu</Link>
+                  <NavLink to={'/menu'}>Menu</NavLink>
                 </li>
                 <li>
-                  <Link to={'/about'}>About</Link>
+                  <NavLink to={'/about'}>About</NavLink>
                 </li>
                 <li>
-                  <Link to={'/contact'}>Contact</Link>
+                  <NavLink to={'/contact'}>Contact</NavLink>
                 </li>
               </ul>
             </Box>
